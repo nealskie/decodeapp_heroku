@@ -5,22 +5,22 @@ class App{
 		this.lib =[
 		{
           "id": 1,
-          "name": "",
+          "name": "What it takes to win",
           "description": "Name: ",
           "image": "img/rich.jpg",
         
         },
         {
           "id": 2,
-          "name": "",
+          "name": "Moby DIck",
           "description": "Name: ",
           "image": "img/mob.jpg",
          
         },
         {
           "id": 3,
-          "name": "",
-          "description": "Name:",
+          "name": "Dear John",
+          "description": "Directed by Lasse Halström and based on the novel by best-selling author Nicholas Sparks, Dear John tells the story of John Tyree (Channing Tatum), a young soldier home on leave, and Savannah Curtis (Amanda Seyfried), the idealistic college student he falls in love with during her spring vacation.",
           "image": "img/john.jpg",
         },
         {
@@ -60,30 +60,30 @@ class App{
          {
 
           "id": 9,
-          "name": "",
-          "description": "Name:",
+          "name": "What it takes to win",
+          "description": "Name:hashjshasjahskjasahskajkashdshdkjshdkjshdjksahdjkash",
           "image": "img/rich.jpg",
         },
          {
 
           "id": 10,
-          "name": "",
-          "description": "Name: Hyundai Elantra 2.0 GLS AT, Body Type:Sedan, Tranamission Type: Automatic, Model Year: 2016, Fuel: Gasoline, Price: ₱ 1,158,000",
+          "name": "Es6& Beyond",
+          "description": "dasdsdsdsadsdsadsadsadasdsadsadsadsadsads",
           "image": "img/es6.jpg",
         },
         {
 
           "id": 11,
-          "name": "",
-          "description": "Name: Subaru Forester 2.0i-Premium, Body Type:SUV, Tranamission Type: CVT, Model Year: 2016, Fuel: Gasoline, Price:   ₱ 1,648,000",
+          "name": "Dear John",
+          "description": "Directed by Lasse Halström and based on the novel by best-selling author Nicholas Sparks, Dear John tells the story of John Tyree (Channing Tatum), a young soldier home on leave, and Savannah Curtis (Amanda Seyfried), the idealistic college student he falls in love with during her spring vacation.",
           "image": "img/john.jpg",
         },
         {
 
           "id": 12,
-          "name": "",
-          "description": "Name: Ford Ranger Wildtrak 3.2L 4X4 AT, Body Type:Pick-Up, Tranamission Type: Automatic, Model Year: 2015, Fuel: Gasoline, Price: ₱ 1,709,000",
-          "image": "img/rich.jpg",
+          "name": "MACARTHUR",
+          "description": "sadjshdksdkjsdkjsdkjshkjsahdkjsa",
+          "image": "img/mac.jpg",
         },];
 	}
 
@@ -169,7 +169,7 @@ class Component extends App{
 					        <li>
 					        <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
 					      	<li><a href="#" onclick="component.libList()">BookList</a></li>  
-					    	<li><a href="#" onclick="component.latestLib()">SaleCar</a></li>
+					    	<li><a href="#" onclick="component.latestLib()">Create Books</a></li>
 					    
 				        </ul>
 					</div>
@@ -324,7 +324,7 @@ class Component extends App{
         ${html}
         `,document.getElementById("libList"));
       $('#libList').show();
-      $('#viewLib').show();
+      $('#viewLib').hide();
       $('#libRecent').hide();
       $('#latestLib').hide();    
       $('#Homepage').hide();
@@ -410,14 +410,14 @@ class Component extends App{
                 <div class="row">
             <div class="input-field col s6 ">
                 <input id="kill2" type="text" class=" vintage">
-                <label for="kill2">Enter Brand Name</label>
+                <label for="kill2">Enter Book Title</label>
               </div>
             </div>
             
             <div class="row">
               <div class="input-field col s6 ">
                 <input id="kill3" type="text" class="deep-white lighten-1">
-               <label for="kill3">Enter Car Details</label>
+               <label for="kill3">Enter book details</label>
               </div>
 
             <div class="row">
