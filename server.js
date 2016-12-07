@@ -9,7 +9,7 @@ app.set('views', __dirname + '/public');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.render('app',{title: 'decode App', logo:'decode', message: '<span>decode App is running!</span>'});
+  res.render('app',{title: 'Decode App', logo:'decode', message: '<span>Decode App is running!</span>'});
 });
  
 app.listen(app.get('port'),function(){
