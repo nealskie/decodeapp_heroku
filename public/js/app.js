@@ -2,89 +2,72 @@
 
   class App{
     constructor(){
-      this.car = [
+      this.book = [
         {
           "id": 1,
           "name": "",
-          "description": "Name: FORD RANGER 4x4,Body Type:Pick-Up, Tranamission Type:Manual, Model Year: 2017, Fuel: Diesel, Price: ₱ 1,199,000",
-          "image": "img/rich.jpg",
+          "description": "",
+          "image": "img/sample1.jpg",
+          "author": "yuson",
+
         
         },
         {
           "id": 2,
           "name": "",
-          "description": "Name: TOYOTA HILUX 4x4, Body Type:Pick-Up, Tranamission Type: Manual, Model Year: 2015,Fuel: Diesel, Price:₱ 1,555,000",
-          "image": "img/mob.jpg",
+          "description": "",
+          "image": "img/es6.jpg",
          
         },
         {
           "id": 3,
           "name": "",
-          "description": "Name: Mitsubishi Strada 4x4, Body Type:Pick-Up, Tranamission Type: Manual, Model Year: 2017, Fuel: Diesel, Price:₱ 1,500,000",
-          "image": "img/john.jpg",
+          "description": "",
+          "image": "img/internet.jpg",
         },
         {
           "id": 4,
           "name": "",
-          "description": "Name; Ford Everest AmbienteT, Body Type:SUV, Tranamission Type: Manual, Model Year: 2015, Fuel: Diesel, Price: ₱ 1,339,000",
-          "image": "img/sample1.jpg",
+          "description": "",
+          "image": "img/rich.jpg",
          
         },
         {
           "id": 5,
           "name": "",
-          "description": "Name: Toyota Fortuner, Body Type:SUV, Tranamission Type: Manual, Model Year: 2016, Fuel: Diesel, Price: ₱ 1,386,000",
-          "image": "img/sample2.jpg",
+          "description": "",
+          "image": "img/john.jpg",
         },
         {
 
           "id": 6,
           "name": "",
-          "description": "Name: Nissan Navara, Body Type:Pick-Up, Tranamission Type: Manual, Model Year: 2015, Fuel: Diesel, Price: ₱ 941,000",
-          "image": "img/internet.jpg",
+          "description": "",
+          "image": "img/sample2.jpg",
         },
         {
 
           "id": 7,
           "name": "",
-          "description": "Name: FOTON Thunder 4x4 2016, Body Type:Pick-Up, Tranamission Type: Manual, Model Year: 2014, Fuel: Diesel, Price: ₱ 1,118,000",
-          "image": "img/es6.jpg",
+          "description": "",
+          "image": "img/sample3.jpg",
         },
          {
 
           "id": 8,
           "name": "",
-          "description": "Name: Honda Civic 1.5 RS Turbo Modulo Sport 2016, Body Type:Sedan, Tranamission Type: CVT, Model Year: 2014, Fuel: Gasoline, Price: ₱ 1,515,000",
-          "image": "img/sample3.jpg",
+          "description": "",
+          "image": "img/mac.jpg",
         },
          {
 
           "id": 9,
           "name": "",
-          "description": "Name: Chevrolet Cruze 1.8 LT AT Body Type:Sedan, Tranamission Type: Automatic, Model Year: 2014, Fuel: Gasoline, Price: ₱ 1,103,888",
-          "image": "img/rich.jpg",
+          "description": "",
+          "image": "img/mob.jpg",
+          "Author": "yuson",
         },
-         {
-
-          "id": 10,
-          "name": "",
-          "description": "Name: Hyundai Elantra 2.0 GLS AT, Body Type:Sedan, Tranamission Type: Automatic, Model Year: 2016, Fuel: Gasoline, Price: ₱ 1,158,000",
-          "image": "img/es6.jpg",
-        },
-        {
-
-          "id": 11,
-          "name": "",
-          "description": "Name: Subaru Forester 2.0i-Premium, Body Type:SUV, Tranamission Type: CVT, Model Year: 2016, Fuel: Gasoline, Price:   ₱ 1,648,000",
-          "image": "img/john.jpg",
-        },
-        {
-
-          "id": 12,
-          "name": "",
-          "description": "Name: Ford Ranger Wildtrak 3.2L 4X4 AT, Body Type:Pick-Up, Tranamission Type: Automatic, Model Year: 2015, Fuel: Gasoline, Price: ₱ 1,709,000",
-          "image": "img/rich.jpg",
-        },
+         
       ];
         
 
@@ -104,14 +87,14 @@
       component.innerHTML = html;
     }
 
-    carDesign(){
+    bookDesign(){
       let id = document.getElementById('kill');
       let name = document.getElementById('kill2');
       let description = document.getElementById('kill3');
       let image = document.getElementById('kill4');
     
 
-      let car = {      
+      let book = {      
         "id": id.value,
         "name": name.value,
         "description": description.value,
@@ -120,25 +103,25 @@
       };
 
 
-      this.car.push(car);
+      this.book.push(car);
 
       
       id.value = name.value = description.value = image.value = ''; 
     } 
 
-    carDelete(key){
-      let r = this.car;
+    bookDelete(key){
+      let r = this.book;
       for(let i=0;i<r.length;i++){
         if(r[i].id == key){
-          this.car.splice(i,1);
+          this.book.splice(i,1);
           break;
         }
       }   
-      this.carList();
+      this.bookList();
     }
 
-    SearchCarById(id){
-      let r = this.car;
+    SearchBookById(id){
+      let r = this.book;
       for(let i=0;i<r.length;i++){
         if(id==r[i].id){
           return r[i];
@@ -146,9 +129,9 @@
       }
     } 
 
-    SearchCar(name){
+    SearchBook(name){
       let objects = [];
-      let r = this.car;
+      let r = this.book;
       for(let i=0;i<r.length;i++){
         let expr = (r[i].name.toUpperCase().indexOf(name.toUpperCase()) > -1);
         if(expr){
@@ -157,58 +140,93 @@
       }
       return objects;
     }
+  }   
 
 
-  }
-
-  class Component extends App{
+class Component extends App{
     constructor(){
       
       super();
     }
 
-    carDesignLayout(){
+
+bookDesignLayout(){
       let html = `
        
- 
+  
           
            
            
 
      <nav>
-      <div class="nav-wrapper grey darken-4">
-        <a href="#" onclick="component.carList()" class="brand-logo"> &nbsp&nbsp&nbsp&nbsp Nealskie Library App </a>
+      <div class="nav-wrapper  grey darken-4">
+        <a href="#" onclick="component.bookList()" class="brand-logo"> &nbsp&nbsp&nbsp&nbsp Nealskie Library App </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
         <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
-      <li><a href="#" onclick="component.carList()">BookList</a></li>  
-    <li><a href="#" onclick="component.latestCar()">SaleCar</a></li>
+      <li><a href="#" onclick="component.bookList()">List of Books</a></li>  
+    <li><a href="#" onclick="component.latestBook()">Create Books</a></li>
     
         </ul>
-
 
        
       </div>
       </nav>
-               <div class="carousel carousel-slider">
-      <a class="carousel-item" href="#one!"><img src="img/cover.jpg"></a>
-      <a class="carousel-item" href="#two!"><img src="img/cover.jpg"></a>
-      <a class="carousel-item" href="#three!"><img src="img/data.jpg"></a>
-      <a class="carousel-item" href="#four!"><img src="img/4.jpg"></a>
-    </div>
-    <br>
+
+
+      <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="img/collections.jpeg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Welcome to Nealskie Library App</h3>
+          <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+         
+        </div>
+      </li>
+      <li>
+        <img src="img/cover.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Welcome to Nealskie Library App</h3>
+          <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+          
+        </div>
+      </li>
+      <li>
+        <img src="img/books.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Welcome to Nealskie Library App</h3>
+          <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+          
+        </div>
+      </li>
+      <li>
+        <img src="img/data.jpeg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Welcome to Nealskie Library App</h3>
+          <h5 class="light grey-text text-lighten-3">version (1.0)</h5>
+          
+        </div>
+      </li>
+    </ul>
+  </div>
+
+      
+
+    
+        
 
 
   </div>
 
 
-           <div id="Homepage"></div>
-          <div id="carRecent"></div>
-          <div id="viewCar"></div>
-          <div id="carList"></div>
-          <div id="latestCar"></div>
+          <div id="Homepage"></div>
+          <div id="bookRecent"></div>
+          <div id="viewBook"></div>
+          <div id="bookList"></div>
+          <div id="latestBook"></div>
           
-         
+          
                     <footer class="page-footer  grey darken-4">
             <div class="container">
               <div class="row">
@@ -217,16 +235,15 @@
                            
 
                 </div>
-                <center>
+                
                 <div class="col l4 offset-l2 s12 ">
-                  <h5 class="white-text ">Car App</h5>
+                  <h5 class="white-text ">Nealskie Library  App</h5>
                  
                   <ul>
-                    <li><a class="grey-text text-lighten-3" href="https://www.ford.com.ph"onclick="component.Homepage()">Ford</li>
-                    <li><a class="grey-text text-lighten-3" href="http://toyotadavao.com.ph"onclick="component.latestCar()">Toyota</li>
-                    <li><a class="grey-text text-lighten-3" href="http://www.isuzu.com/"onclick="component.carList()"">Isuzu</li>
-                    <li><a class="grey-text text-lighten-3" href="http://mmpc.ph/"onclick="component.carList()"">Mitsubishi</li>
-                     <li><a class="grey-text text-lighten-3" href="https://www.autodeal.com.ph"onclick="component.carList()"">More</li>
+                    <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
+                    <li><a href="#" onclick="component.bookList()">List of Books</a></li>  
+                    <li><a href="#" onclick="component.latestBook()">Create Books</a></li>
+                   
                     </center>
                   
                       
@@ -237,10 +254,16 @@
               
               </div>
             </div>
+      <center>
+     <div clas
+               <ul>@Nealskie Library App</ul>
+               <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+        <li><a href="#" onclick="component.Homepage()">HomePage</a></li>
+      <li><a href="#" onclick="component.bookList()">List of Books</a></li>  
+    <li><a href="#" onclick="component.latestBook()">Create Books</a></li>
     
-     <div class="footer-copyright">
-              <center>
-               <ul>@Binobo Man Power And Tracking Services</ul>
+        </ul>
               </center>  
               </div>
             </div>
@@ -253,13 +276,13 @@
         ${html}
 
         `,document.getElementById("app"));
-      this.carRecent();    
+      this.bookRecent();    
     }
 
    
 
-    viewCar(id){
-      let r = this.SearchCarById(id);
+    viewBook(id){
+      let r = this.SearchBookById(id);
 
       let html = `
 
@@ -280,8 +303,8 @@
                   <p>${r.description}</p>
                 </div>
               <div class="card-action small">               
-                  <span onclick="component.carDelete(${r.id})" class="new badge small red" data-badge-caption="">Delete Base</span>
-                 <span onclick="component.carList()" class="new badge small" data-badge-caption="">Back to List</span>
+                  <span onclick="component.bookDelete(${r.id})" class="new badge small red" data-badge-caption="">Delete Base</span>
+                 <span onclick="component.bookList()" class="new badge small" data-badge-caption="">Back to List</span>
                 </div>            
               </div>     
             </div>   
@@ -292,16 +315,16 @@
 
       this.reRender(`   
         ${html}     
-        `,document.getElementById("viewCar"));
-      $('#viewCar').show();
-      $('#carRecent').hide();
-      $('#carList').hide();
-      $('#latestCar').hide();
+        `,document.getElementById("viewBook"));
+      $('#viewBook').show();
+      $('#bookRecent').hide();
+      $('#bookList').hide();
+      $('#latestBook').hide();
 
         $('#Homepage').hide();
     }
 
-    carList(){
+    bookList(){
       let html = `
 
 
@@ -312,7 +335,7 @@
             <div class="nav-wrapper white">
             <form>
               <div class="input-field">       
-                <input onkeyup="component.carItems(this.value)" id="search" type="search" placeholder="Search" required>
+                <input onkeyup="component.bookItems(this.value)" id="search" type="search" placeholder="Search" required>
                 <label for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
@@ -324,9 +347,9 @@
       `;
 
       html += `
-        <div class="row" id="carItems">
+        <div class="row" id="bookItems">
       `;
-      let r = this.car;
+      let r = this.book;
       for(let i=0;i<r.length;i++){
         html+= `
           <div class="col s12 m4">
@@ -339,7 +362,7 @@
                 <p>${r[i].description}</p>
               </div>
               <div class="card-action">
-                <a href="#" onclick="component.viewCar(${r[i].id})">More Details</a>
+                <a href="#" onclick="component.viewBook(${r[i].id})">More Details</a>
               </div>
             </div>
           </div>
@@ -350,17 +373,17 @@
 
       this.reRender(`
         ${html}
-        `,document.getElementById("carList"));
-      $('#carList').show();
-      $('#viewCar').hide();
-      $('#carRecent').hide();
-      $('#latestCar').hide();    
+        `,document.getElementById("bookList"));
+      $('#bookList').show();
+      $('#viewBook').hide();
+      $('#bookRecent').hide();
+      $('#latestBook').hide();    
            $('#Homepage').hide();
     }
 
-    carItems(name){
+    bookItems(name){
       let html = ``;
-      let r = this.SearchCar(name);
+      let r = this.SearchBook(name);
       for(let i=0;i<r.length;i++){
         html+= `
           <div class="col s12 m4">
@@ -373,7 +396,7 @@
                 <p>${r[i].description}</p>
               </div>
               <div class="card-action">
-                <a href="#" onclick="component.viewCar(${r[i].id})">More</a>
+                <a href="#" onclick="component.viewBook(${r[i].id})">More</a>
               </div>
             </div>
           </div>
@@ -381,16 +404,16 @@
       }   
       this.reRender(`
         ${html}
-        `,document.getElementById("carItems"));
-      $('#carList').show();
-      $('#viewCar').hide();
-      $('#carRecent').hide();  
-      $('#latestCar').hide();
+        `,document.getElementById("bookItems"));
+      $('#bookList').show();
+      $('#viewBook').hide();
+      $('#bookRecent').hide();  
+      $('#latestBook').hide();
           $('#Homepage').hide();    
     }
 
 
-    carRecent(){
+    bookRecent(){
       
       let html = `
 
@@ -410,7 +433,7 @@
                <div class="row">
       `;
 
-      let r = this.car;
+      let r = this.book;
       let count = 0;
       for(let i=(r.length-1);i>=0;i--){
         if(count++ === 6)break;
@@ -425,7 +448,7 @@
                 <p>${r[i].description}</p>
               </div>
               <div class="card-action">
-                <a href="#" onclick="component.viewCar(${r[i].id})">More Details</a>
+                <a href="#" onclick="component.viewBook(${r[i].id})">More Details</a>
               </div>
             </div>
           </div>
@@ -436,10 +459,10 @@
 
       this.render(`   
         ${html}
-        `,document.getElementById("carRecent"));
+        `,document.getElementById("bookRecent"));
     }
 
-    latestCar(){
+    latestBook(){
       let html = `
 
      
@@ -447,19 +470,19 @@
             
          <div class="row">
               <div class="input-field col s6 ">
-                <input disabled value="${this.car.length+1}" id="kill" type="text"class=" vintage" >
+                <input disabled value="${this.book.length+1}" id="kill" type="text"class=" vintage" >
               </div>
                 <div class="row">
             <div class="input-field col s6 ">
                 <input id="kill2" type="text" class=" vintage">
-                <label for="kill2">Enter Brand Name</label>
+                <label for="kill2">Enter Book Name</label>
               </div>
             </div>
             
             <div class="row">
               <div class="input-field col s6 ">
                 <input id="kill3" type="text" class="deep-white lighten-1">
-               <label for="kill3">Enter Car Details</label>
+               <label for="kill3">Enter Book Details</label>
               </div>
 
             <div class="row">
@@ -468,9 +491,9 @@
                 <label for="kill4"> Enter Link Address Pictures</label>
               </div>
           <div align="center">
-         <button onclick="component.carList()" class="btn waves-effect waves-light">Back</button>
+         <button onclick="component.bookList()" class="btn waves-effect waves-light">Back</button>
         
-               <button onclick="component.carDesign()" class="btn waves-effect waves-light">Save</button>
+               <button onclick="component.bookDesign()" class="btn waves-effect waves-light">Save</button>
            </div>
        
            
@@ -481,11 +504,11 @@
 
       this.reRender(`
         ${html}
-        `,document.getElementById("latestCar"));
-      $('#latestCar').show();
-      $('#carList').hide();
-      $('#viewCar').hide();
-      $('#carRecent').hide(); 
+        `,document.getElementById("latestBook"));
+      $('#latestBook').show();
+      $('#bookList').hide();
+      $('#viewBook').hide();
+      $('#bookRecent').hide(); 
       $('#Homepage').hide();    
     }
 
@@ -500,11 +523,11 @@
     `;
      this.reRender(`
         ${html}
-        `,document.getElementById("latestCar"));
-      $('#latestCar').hide();
-      $('#carList').hide();
+        `,document.getElementById("latestBook"));
+      $('#latestBook').hide();
+      $('#bookList').hide();
       $('#viewCar').hide();
-      $('#carRecent').show();  
+      $('#bookRecent').show();  
       $('#Homepage').hide();  
 
   }
@@ -512,4 +535,4 @@
 
   } 
   let component = new Component();
-  component.carDesignLayout();
+  component.bookDesignLayout();
